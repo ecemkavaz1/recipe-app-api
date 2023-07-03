@@ -115,7 +115,7 @@ class PrivateUserApiTests(TestCase):
         self.user = create_user(
             email='test@example.com',
             password='testpass123',
-            name='Test Name',
+            name='Test name',
         )
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
@@ -138,7 +138,7 @@ class PrivateUserApiTests(TestCase):
 
     def test_update_user_profile(self):
         """Test updating the user profile for the authenticated user"""
-        payload = {'name': 'Updated Name', 'password': 'newpassword123'}
+        payload = {'name': 'Updated name', 'password': 'newpassword123'}
 
         res = self.client.patch(ME_URL, payload)
 
